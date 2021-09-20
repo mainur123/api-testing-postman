@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "52e0f266-e9ee-4b40-b3d6-2bb6e71cd574",
+		"name": "Books",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get List of Books",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 800ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(800);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is matching\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"title\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"description\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}Books",
+					"host": [
+						"{{baseURL}}Books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Single Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 400ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is matching\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"title\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"description\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"pageCount\");\r",
+							"});\r",
+							"\r",
+							"var schema = {\r",
+							"    \"$schema\": \"http://json-schema.org/draft-06/schema\",\r",
+							"    \"$id\": \"http://example.com/example.json\",\r",
+							"    \"type\": \"object\",\r",
+							"    \"title\": \"The root schema\",\r",
+							"    \"description\": \"The root schema comprises the entire JSON document.\",\r",
+							"    \"default\": {},\r",
+							"    \"examples\": [\r",
+							"        {\r",
+							"            \"id\": 1,\r",
+							"            \"title\": \"Book 1\",\r",
+							"            \"description\": \"Vero accumsan qui gubergren takimata consetetur sed amet vulputate rebum nonumy et ipsum vel et invidunt. Sadipscing id amet adipiscing nisl lorem at. In exerci dolor. Sit et amet dolor dolore dolor liber aliquam ipsum vero ea quod autem ipsum sea elitr gubergren in. Amet adipiscing diam. Sea at iriure no iriure diam autem eos ea ea labore sed augue takimata. Sed sed kasd stet. Amet kasd et eos.\\n\",\r",
+							"            \"pageCount\": 100,\r",
+							"            \"excerpt\": \"Tempor consetetur diam magna elitr illum tempor sed lorem accusam eirmod vero et eirmod. Elitr magna dolor invidunt dolor eu erat dolore no et et. Nibh accusam dolor et et et sit magna. Nonumy ea diam sadipscing accusam sed justo eos at. Invidunt lorem sadipscing ut. Nulla vero aliquam clita facilisi et minim. Et augue invidunt iriure dolor augue clita gubergren est et gubergren rebum.\\nConsetetur sed takimata lorem. Feugiat justo voluptua ea et dolore sea kasd sea blandit veniam ipsum labore vero praesent diam lorem et. Enim rebum dignissim laoreet vero no est vel ut option dignissim ea clita ipsum lorem.\\nLorem tempor dolor labore consetetur consetetur vulputate sed accusam at voluptua eos diam kasd magna. At dolore ut praesent vero accusam congue et clita sit nulla et est te esse rebum. Zzril duis rebum no dolor diam et duis commodo justo ut ea nonumy sit est elitr. Ut adipiscing vel magna ipsum luptatum voluptua te eos et. Magna est takimata amet kasd kasd tation dolor. Justo est lorem dolore et hendrerit takimata. Illum laoreet te aliquyam tempor eos dolores. Sadipscing iriure in duo at sanctus vero sit et hendrerit dolores nulla vero laoreet. Ut dolor eirmod luptatum. Et sit vero magna magna duo lorem sadipscing sit amet stet qui vel voluptua accusam sadipscing amet. Accusam eos nonumy sea et takimata erat ut invidunt ipsum ut. Ipsum vel hendrerit lorem magna sanctus quis et duo aliquip. Hendrerit et et consetetur no. Magna aliquam sed zzril erat dolore in invidunt elitr dolor vulputate sit labore amet gubergren.\\nSadipscing elit eos lobortis et et. Duo in stet diam placerat stet euismod laoreet tempor aliquyam stet labore quod no dolor amet labore dolor. Et nulla voluptua facilisis suscipit takimata sit duo elitr.\\nLabore takimata diam autem et nonumy laoreet adipiscing nibh et. At luptatum amet. Dolor et amet sadipscing sit autem et takimata no ad clita ipsum erat. Congue odio dolore assum magna veniam. Dolor qui wisi sea lorem rebum et ea. Vero vulputate at aliquyam diam placerat luptatum erat tempor invidunt voluptua sea at. Placerat labore diam no augue amet soluta eirmod invidunt ipsum consequat sit labore sit vel duo. Accusam aliquyam ipsum. Enim dolore voluptua vero lorem molestie sit vero eos invidunt duo invidunt volutpat mazim. Elitr rebum amet ex ea accumsan vero eos dolor stet sadipscing rebum sit et accusam elitr. Sea aliquam ea gubergren takimata eum et et sed dolor vel duis aliquyam no ut est illum tempor aliquip.\\n\",\r",
+							"            \"publishDate\": \"2021-09-19T20:28:56.4548843+00:00\"\r",
+							"        }\r",
+							"    ],\r",
+							"    \"required\": [\r",
+							"        \"id\",\r",
+							"        \"title\",\r",
+							"        \"description\",\r",
+							"        \"pageCount\",\r",
+							"        \"excerpt\",\r",
+							"        \"publishDate\"\r",
+							"    ],\r",
+							"    \"properties\": {\r",
+							"        \"id\": {\r",
+							"            \"$id\": \"#/properties/id\",\r",
+							"            \"type\": \"integer\",\r",
+							"            \"title\": \"The id schema\",\r",
+							"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+							"            \"default\": 0,\r",
+							"            \"examples\": [\r",
+							"                1\r",
+							"            ]\r",
+							"        },\r",
+							"        \"title\": {\r",
+							"            \"$id\": \"#/properties/title\",\r",
+							"            \"type\": \"string\",\r",
+							"            \"title\": \"The title schema\",\r",
+							"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+							"            \"default\": \"\",\r",
+							"            \"examples\": [\r",
+							"                \"Book 1\"\r",
+							"            ]\r",
+							"        },\r",
+							"        \"description\": {\r",
+							"            \"$id\": \"#/properties/description\",\r",
+							"            \"type\": \"string\",\r",
+							"            \"title\": \"The description schema\",\r",
+							"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+							"            \"default\": \"\",\r",
+							"            \"examples\": [\r",
+							"                \"Vero accumsan qui gubergren takimata consetetur sed amet vulputate rebum nonumy et ipsum vel et invidunt. Sadipscing id amet adipiscing nisl lorem at. In exerci dolor. Sit et amet dolor dolore dolor liber aliquam ipsum vero ea quod autem ipsum sea elitr gubergren in. Amet adipiscing diam. Sea at iriure no iriure diam autem eos ea ea labore sed augue takimata. Sed sed kasd stet. Amet kasd et eos.\\n\"\r",
+							"            ]\r",
+							"        },\r",
+							"        \"pageCount\": {\r",
+							"            \"$id\": \"#/properties/pageCount\",\r",
+							"            \"type\": \"integer\",\r",
+							"            \"title\": \"The pageCount schema\",\r",
+							"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+							"            \"default\": 0,\r",
+							"            \"examples\": [\r",
+							"                100\r",
+							"            ]\r",
+							"        },\r",
+							"        \"excerpt\": {\r",
+							"            \"$id\": \"#/properties/excerpt\",\r",
+							"            \"type\": \"string\",\r",
+							"            \"title\": \"The excerpt schema\",\r",
+							"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+							"            \"default\": \"\",\r",
+							"            \"examples\": [\r",
+							"                \"Tempor consetetur diam magna elitr illum tempor sed lorem accusam eirmod vero et eirmod. Elitr magna dolor invidunt dolor eu erat dolore no et et. Nibh accusam dolor et et et sit magna. Nonumy ea diam sadipscing accusam sed justo eos at. Invidunt lorem sadipscing ut. Nulla vero aliquam clita facilisi et minim. Et augue invidunt iriure dolor augue clita gubergren est et gubergren rebum.\\nConsetetur sed takimata lorem. Feugiat justo voluptua ea et dolore sea kasd sea blandit veniam ipsum labore vero praesent diam lorem et. Enim rebum dignissim laoreet vero no est vel ut option dignissim ea clita ipsum lorem.\\nLorem tempor dolor labore consetetur consetetur vulputate sed accusam at voluptua eos diam kasd magna. At dolore ut praesent vero accusam congue et clita sit nulla et est te esse rebum. Zzril duis rebum no dolor diam et duis commodo justo ut ea nonumy sit est elitr. Ut adipiscing vel magna ipsum luptatum voluptua te eos et. Magna est takimata amet kasd kasd tation dolor. Justo est lorem dolore et hendrerit takimata. Illum laoreet te aliquyam tempor eos dolores. Sadipscing iriure in duo at sanctus vero sit et hendrerit dolores nulla vero laoreet. Ut dolor eirmod luptatum. Et sit vero magna magna duo lorem sadipscing sit amet stet qui vel voluptua accusam sadipscing amet. Accusam eos nonumy sea et takimata erat ut invidunt ipsum ut. Ipsum vel hendrerit lorem magna sanctus quis et duo aliquip. Hendrerit et et consetetur no. Magna aliquam sed zzril erat dolore in invidunt elitr dolor vulputate sit labore amet gubergren.\\nSadipscing elit eos lobortis et et. Duo in stet diam placerat stet euismod laoreet tempor aliquyam stet labore quod no dolor amet labore dolor. Et nulla voluptua facilisis suscipit takimata sit duo elitr.\\nLabore takimata diam autem et nonumy laoreet adipiscing nibh et. At luptatum amet. Dolor et amet sadipscing sit autem et takimata no ad clita ipsum erat. Congue odio dolore assum magna veniam. Dolor qui wisi sea lorem rebum et ea. Vero vulputate at aliquyam diam placerat luptatum erat tempor invidunt voluptua sea at. Placerat labore diam no augue amet soluta eirmod invidunt ipsum consequat sit labore sit vel duo. Accusam aliquyam ipsum. Enim dolore voluptua vero lorem molestie sit vero eos invidunt duo invidunt volutpat mazim. Elitr rebum amet ex ea accumsan vero eos dolor stet sadipscing rebum sit et accusam elitr. Sea aliquam ea gubergren takimata eum et et sed dolor vel duis aliquyam no ut est illum tempor aliquip.\\n\"\r",
+							"            ]\r",
+							"        },\r",
+							"        \"publishDate\": {\r",
+							"            \"$id\": \"#/properties/publishDate\",\r",
+							"            \"type\": \"string\",\r",
+							"            \"title\": \"The publishDate schema\",\r",
+							"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+							"            \"default\": \"\",\r",
+							"            \"examples\": [\r",
+							"                \"2021-09-19T20:28:56.4548843+00:00\"\r",
+							"            ]\r",
+							"        }\r",
+							"    },\r",
+							"    \"additionalProperties\": true\r",
+							"}\r",
+							"\r",
+							"pm.test('Schema is valid', function () {\r",
+							"    pm.expect(tv4.validate(pm.response.json(), schema)).to.be.true;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}Books/1",
+					"host": [
+						"{{baseURL}}Books"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test Title\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.title).to.eql(\"New Book\");\r",
+							"});\r",
+							"pm.test(\"Test Book Description\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.description).to.eql(\"New Book Description\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 201,\r\n  \"title\": \"New Book\",\r\n  \"description\": \"New Book Description\",\r\n  \"pageCount\": 600,\r\n  \"excerpt\": \"Clita et dolor iriure dolor elit possim. In lorem no dolore eirmod ut et ipsum nulla nulla invidunt duis feugait facilisis accusam ex vero imperdiet est. Accusam nobis dolore invidunt consetetur duis dolor qui ipsum lobortis euismod clita invidunt. Voluptua exerci hendrerit feugiat. Dolor clita ipsum sanctus vero consetetur soluta nonumy voluptua vero lorem. Aliquyam dolor tempor sadipscing liber nostrud wisi vel eirmod lobortis molestie. Magna et diam amet ipsum accusam lorem et diam sed ut kasd rebum sea. In lorem sadipscing et sed et sea lorem et lorem lorem erat sed nonumy amet tempor eu sanctus magna. Ullamcorper et illum iusto consetetur amet rebum sanctus et amet autem clita aliquyam et eos feugiat. Eum tempor vel amet dolor qui elitr takimata et eu dolor aliquyam lorem lorem diam. Sed blandit ipsum sed no kasd et dolor. Sadipscing laoreet aliquam vel voluptua vel sed ea dolor sadipscing dolor exerci consequat rebum invidunt delenit consetetur stet lorem. Volutpat elitr iriure dignissim dolor nostrud quis ipsum luptatum nonumy sadipscing et quod tempor et voluptua invidunt. Eirmod aliquyam diam ipsum nostrud amet lorem veniam esse lorem.\\nIpsum consectetuer et duis dolor dolor sit takimata duo no et et takimata vel ea at ipsum. Erat feugiat ut rebum gubergren vel ut vulputate diam aliquyam dolor in ex amet mazim aliquyam. Zzril eu dolor suscipit et. Sed laoreet ea mazim elitr sit dolores sed eos et takimata sit. Lorem lorem dolores facilisis blandit. In sanctus eirmod lorem molestie invidunt lorem sed at et. Accusam esse dolor sed veniam velit justo duo duo magna. Zzril diam rebum eos rebum in. Vero sit clita nulla nisl. Labore dolore ipsum consetetur. Ea ut amet sanctus justo eos et. Diam invidunt qui enim et erat. Duo et lorem. Sit eos zzril. Eleifend vulputate dolore id assum. Justo dolores nonumy lorem duo praesent vero lorem et eos facilisis. Sed illum magna at duo et suscipit in consequat. Zzril praesent facilisis et consectetuer sed blandit magna aliquyam eos luptatum ea duo eos lorem amet. Sadipscing lorem amet magna magna stet.\\nPlacerat nostrud erat dolores. Dolor amet sadipscing dolor et et diam takimata ea sadipscing accumsan vel et voluptua gubergren. Lorem dolore amet no ea facilisis eum. No lorem dolore et sadipscing ipsum diam rebum. Lobortis aliquyam aliquyam magna magna sed dolor labore zzril justo magna molestie est consectetuer. Sit kasd et justo erat et tation amet magna facilisi clita amet voluptua eirmod erat et.\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}Books",
+					"host": [
+						"{{baseURL}}Books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Existing Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status Code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 300ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test title\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.title).to.eql(\"Changed Book Title\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test Description\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.description).to.eql(\"Changed Book Description\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"title\": \"Changed Book Title\",\r\n  \"description\": \"Changed Book Description\",\r\n  \"pageCount\": 600,\r\n  \"excerpt\": \"Clita et dolor iriure dolor elit possim. In lorem no dolore eirmod ut et ipsum nulla nulla invidunt duis feugait facilisis accusam ex vero imperdiet est. Accusam nobis dolore invidunt consetetur duis dolor qui ipsum lobortis euismod clita invidunt. Voluptua exerci hendrerit feugiat. Dolor clita ipsum sanctus vero consetetur soluta nonumy voluptua vero lorem. Aliquyam dolor tempor sadipscing liber nostrud wisi vel eirmod lobortis molestie. Magna et diam amet ipsum accusam lorem et diam sed ut kasd rebum sea. In lorem sadipscing et sed et sea lorem et lorem lorem erat sed nonumy amet tempor eu sanctus magna. Ullamcorper et illum iusto consetetur amet rebum sanctus et amet autem clita aliquyam et eos feugiat. Eum tempor vel amet dolor qui elitr takimata et eu dolor aliquyam lorem lorem diam. Sed blandit ipsum sed no kasd et dolor. Sadipscing laoreet aliquam vel voluptua vel sed ea dolor sadipscing dolor exerci consequat rebum invidunt delenit consetetur stet lorem. Volutpat elitr iriure dignissim dolor nostrud quis ipsum luptatum nonumy sadipscing et quod tempor et voluptua invidunt. Eirmod aliquyam diam ipsum nostrud amet lorem veniam esse lorem.\\nIpsum consectetuer et duis dolor dolor sit takimata duo no et et takimata vel ea at ipsum. Erat feugiat ut rebum gubergren vel ut vulputate diam aliquyam dolor in ex amet mazim aliquyam. Zzril eu dolor suscipit et. Sed laoreet ea mazim elitr sit dolores sed eos et takimata sit. Lorem lorem dolores facilisis blandit. In sanctus eirmod lorem molestie invidunt lorem sed at et. Accusam esse dolor sed veniam velit justo duo duo magna. Zzril diam rebum eos rebum in. Vero sit clita nulla nisl. Labore dolore ipsum consetetur. Ea ut amet sanctus justo eos et. Diam invidunt qui enim et erat. Duo et lorem. Sit eos zzril. Eleifend vulputate dolore id assum. Justo dolores nonumy lorem duo praesent vero lorem et eos facilisis. Sed illum magna at duo et suscipit in consequat. Zzril praesent facilisis et consectetuer sed blandit magna aliquyam eos luptatum ea duo eos lorem amet. Sadipscing lorem amet magna magna stet.\\nPlacerat nostrud erat dolores. Dolor amet sadipscing dolor et et diam takimata ea sadipscing accumsan vel et voluptua gubergren. Lorem dolore amet no ea facilisis eum. No lorem dolore et sadipscing ipsum diam rebum. Lobortis aliquyam aliquyam magna magna sed dolor labore zzril justo magna molestie est consectetuer. Sit kasd et justo erat et tation amet magna facilisi clita amet voluptua eirmod erat et.\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}Books/1",
+					"host": [
+						"{{baseURL}}Books"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}Books/2",
+					"host": [
+						"{{baseURL}}Books"
+					],
+					"path": [
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://fakerestapi.azurewebsites.net/api/v1/"
+		}
+	]
+}
